@@ -75,7 +75,12 @@ import WeeklyReportStock from "./Pages/Marketplace/WeeklyReportMp/WeeklyReportSt
 import WeeklyReportPurchases from "./Pages/Marketplace/WeeklyReportMp/WeeklyReportPurchases";
 import WeeklyReportSales from "./Pages/Marketplace/WeeklyReportMp/WeeklyReportSales";
 
-// import Purchase from "./Pages/Purchase";
+import MpPurchasesSausage from "./Pages/Marketplace/MpPurchases/MpPurchasesSausage";
+import MpPurchasesChicken from "./Pages/Marketplace/MpPurchases/MpPurchasesChicken";
+import MpPurchasesChickenCut from "./Pages/Marketplace/MpPurchases/MpPurchasesChickenCut";
+import MpPurchasesFries from "./Pages/Marketplace/MpPurchases/MpPurchasesFries";
+
+
 // import Purchase from "./Pages/Purchase";
 // import Purchase from "./Pages/Purchase";
 // import Purchase from "./Pages/Purchase";
@@ -294,12 +299,20 @@ const Routes = () => {
       </Route>
 
 
-      {/* <Route exact path="/purchase">
-        <Purchase />
-      </Route> */}
-       {/* <Route exact path="/purchase">
-        <Purchase />
-      </Route> */}
+      <Route exact path="/mpPurchasesSausage">
+        <MpPurchasesSausage />
+      </Route>
+       <Route exact path="/mpPurchasesChicken">
+        <MpPurchasesChicken />
+      </Route>
+      <Route exact path="/mpPurchasesChickenCut">
+        <MpPurchasesChickenCut />
+      </Route>
+       <Route exact path="/mpPurchasesFries">
+        <MpPurchasesFries />
+      </Route>
+      
+
       {/* <Route exact path="/purchase">
         <Purchase />
       </Route> */}
