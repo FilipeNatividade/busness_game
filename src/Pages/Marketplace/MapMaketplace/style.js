@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+export const ExternContainer = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: center;
+`;
+
 export const Container = styled.div`
   align-items: center;
   background-image: url("./images/backgorud_Map_Menu_marketplace.png");
@@ -13,6 +19,58 @@ export const Container = styled.div`
   height: 812px;
   justify-content: space-between;
   width: 100%;
+`;
+
+export const ButtonsFloatContainer = styled.div`
+align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 15vw;
+  justify-content: space-between;
+  min-height: 150px;
+  min-width: 150px;
+  margin-bottom: 90px;
+  margin-left: 40px;
+  position: absolute;
+  transform: rotate(55deg);
+  width: 20vw;
+  /* @media only screen and (min-width: 610px) and (max-width: 730px) {
+    height: 30vw;
+    width: 30vw;
+  } */
+  /* @media only screen and (min-width: 731px) {
+    margin-bottom: 260px;
+    margin-left: 125px;
+  } */
+`;
+
+export const ButtonsFloatSection = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+`;
+
+export const ButtonsFloat = styled.button`
+  background-color: transparent;
+  height: 25px;
+  width: 25px;
+  img {
+    transform: rotate(-50deg);
+    margin-top: -25px;
+    margin-left: -25px;
+  }
+  p {
+    background-color: #eb6d03;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    margin-top: -75px;
+    margin-left: -30px;
+    position: absolute;
+    padding: 5px;
+    padding-left: 30px;
+    transform: rotate(-55deg);
+  }
 `;
 
 export const ContainerHeader = styled.header`

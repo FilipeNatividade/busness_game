@@ -1,25 +1,29 @@
+import { useState } from "react";
 import { useHistory } from "react-router";
 
 import { ContainerFooter, ContainerTools, ContainerMenu } from "./style";
 
-const ButtonsMap = () => {
+const ButtonsMap = ({ showButtons = true }) => {
+  console.log(showButtons);
   const history = useHistory();
   return (
     <ContainerFooter>
-      <ContainerTools>
-        <button onClick={() => history.push("/mpStockSausage")}>
-          <img src="./images/stock_Mp.svg" alt="purchase_button" />
-        </button>
-        <button onClick={() => history.push("/mpPurchasesSausage")}>
-          <img src="./images/purchase_button.svg" alt="production_button" />
-        </button>
-        <button onClick={() => history.push("mpSalesSausage")}>
-          <img src="./images/partnership.svg" alt="commercial_button" />
-        </button>
-        <button onClick={() => history.push("weeklyReportStock")}>
-          <img src="./images/calendar.svg" alt="pcp_button" />
-        </button>
-      </ContainerTools>
+      {showButtons && (
+        <ContainerTools>
+          <button onClick={() => history.push("/mpStockSausage")}>
+            <img src="./images/stock_Mp.svg" alt="purchase_button" />
+          </button>
+          <button onClick={() => history.push("/mpPurchasesSausage")}>
+            <img src="./images/purchase_button.svg" alt="production_button" />
+          </button>
+          <button onClick={() => history.push("mpSalesSausage")}>
+            <img src="./images/partnership.svg" alt="commercial_button" />
+          </button>
+          <button onClick={() => history.push("weeklyReportStock")}>
+            <img src="./images/calendar.svg" alt="pcp_button" />
+          </button>
+        </ContainerTools>
+      )}
       <ContainerMenu>
         <button onClick={() => history.push("/mLossesAndProfits")}>
           <img src="./images/pel_button.svg" alt="pel_button.svg" />
