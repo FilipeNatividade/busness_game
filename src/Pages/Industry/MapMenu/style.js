@@ -54,10 +54,22 @@ export const ButtonsFloat = styled.button`
   background-color: transparent;
   height: 25px;
   width: 25px;
-  img{
+  img {
     transform: rotate(-50deg);
-    margin-top:-25px;
+    margin-top: -25px;
     margin-left: -25px;
+  }
+  p {
+    background-color: #eb6d03;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    margin-top: -75px;
+    margin-left: -30px;
+    position: absolute;
+    padding: 5px;
+    padding-left: 30px;
+    transform: rotate(-55deg);
   }
 `;
 

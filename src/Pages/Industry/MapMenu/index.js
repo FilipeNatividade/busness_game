@@ -30,13 +30,16 @@ import { useState } from "react";
 const MapMenu = () => {
   const { entranceValue } = useValue();
 
+  const [shedShow, setShedShow] = useState(false);
+
   const [modalOnOff, setModalOnOff] = useState(false);
 
-  const modal = () => {
-    setModalOnOff(!modalOnOff);
-  };
+  const modal = () => setModalOnOff(!modalOnOff);
+
+  const shed = () => setShedShow(!shedShow);
 
   const history = useHistory();
+
   return (
     <ExternContainer>
       <ButtonsFloatContainer>
@@ -49,7 +52,20 @@ const MapMenu = () => {
           </ButtonsFloat>
         </ButtonsFloatSection>
         <ButtonsFloatSection>
-          <ButtonsFloat onClick={() => history.push('')}>
+          <ButtonsFloat onClick={shed}>
+            {shedShow && (
+              <p>
+                Locação:{" "}
+                <CountUp
+                  end={90000}
+                  separator="."
+                  decimal=","
+                  decimals={2}
+                  duration={0.5}
+                />
+              </p>
+            )}
+
             <img src="/images/shed_float.svg" alt="shed_float" />
           </ButtonsFloat>
           <ButtonsFloat onClick={() => history.push("/weeklyReportPcp")}>
@@ -83,7 +99,7 @@ const MapMenu = () => {
                 />
               </TotalValue>
             )}
-            <PlayngTime >
+            <PlayngTime>
               <HeaderImg src="./images/icon_playng_game.svg" />
               Semana 1
             </PlayngTime>
