@@ -1,7 +1,13 @@
 import styled from "styled-components";
 
+export const ExternContainer = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: center;
+`;
+
 export const Container = styled.div`
-align-items: center;
+  align-items: center;
   background-image: url("./images/backgorud_Map_Menu2.svg");
   background-position: center;
   background-repeat: no-repeat;
@@ -9,10 +15,50 @@ align-items: center;
   color: #fff;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   height: 812px;
   justify-content: space-between;
+  min-height: 100vh;
   width: 100%;
+`;
+
+export const ButtonsFloatContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 25vw;
+  justify-content: space-between;
+  min-height: 150px;
+  min-width: 150px;
+  margin-bottom: 170px;
+  margin-left: 70px;
+  position: absolute;
+  transform: rotate(55deg);
+  width: 25vw;
+  @media only screen and (min-width: 610px) and (max-width: 730px) {
+    height: 30vw;
+    width: 30vw;
+  }
+  @media only screen and (min-width: 731px) {
+    /* height:27vw; */
+    margin-bottom: 260px;
+    margin-left: 125px;
+    /* width: vw; */
+  }
+`;
+
+export const ButtonsFloatSection = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const ButtonsFloat = styled.button`
+  background-color: transparent;
+  height: 25px;
+  width: 25px;
+  img{
+    transform: rotate(-50deg);
+    margin-top:-25px;
+    margin-left: -25px;
+  }
 `;
 
 export const ContainerHeader = styled.header`
@@ -121,7 +167,7 @@ export const ModalOn = styled(ContainerActivateModal)`
   justify-content: space-between;
   padding: 0 3px 0 10px;
   width: 300px;
-  z-index: 1;
+  z-index: 3;
 `;
 
 export const ActivateModalButton = styled.img`

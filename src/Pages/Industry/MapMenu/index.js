@@ -3,6 +3,7 @@ import { useValue } from "../../../providers/ValueContext";
 import CountUp from "react-countup";
 import Modal from "../../../Components/ComponentsIndustry/Modal";
 import {
+  ExternContainer,
   Container,
   ContainerHeader,
   ContainerTitle,
@@ -20,6 +21,9 @@ import {
   ContainerFooter,
   ContainerTools,
   ContainerMenu,
+  ButtonsFloatContainer,
+  ButtonsFloat,
+  ButtonsFloatSection,
 } from "./style";
 import { useState } from "react";
 
@@ -34,7 +38,26 @@ const MapMenu = () => {
 
   const history = useHistory();
   return (
-    <Container>
+    <ExternContainer>
+      <ButtonsFloatContainer>
+        <ButtonsFloatSection>
+          <ButtonsFloat onClick={() => history.push("/employees")}>
+            <img src="/images/management_float.svg" alt="management_float" />
+          </ButtonsFloat>
+          <ButtonsFloat onClick={() => history.push("/machinery")}>
+            <img src="/images/tools_float.svg" alt="tools_float" />
+          </ButtonsFloat>
+        </ButtonsFloatSection>
+        <ButtonsFloatSection>
+          <ButtonsFloat onClick={() => history.push('')}>
+            <img src="/images/shed_float.svg" alt="shed_float" />
+          </ButtonsFloat>
+          <ButtonsFloat onClick={() => history.push("/weeklyReportPcp")}>
+            <img src="/images/calendar_float.svg" alt="calendar_float" />
+          </ButtonsFloat>
+        </ButtonsFloatSection>
+      </ButtonsFloatContainer>
+      <Container>
         <ContainerHeader>
           <ContainerTitle>
             {entranceValue >= 0 ? (
@@ -60,7 +83,7 @@ const MapMenu = () => {
                 />
               </TotalValue>
             )}
-            <PlayngTime onClick={() => history.push("/weeklyReportPcp")}>
+            <PlayngTime >
               <HeaderImg src="./images/icon_playng_game.svg" />
               Semana 1
             </PlayngTime>
@@ -76,12 +99,11 @@ const MapMenu = () => {
             <TimeButton>
               <img src="./images/button_advance.svg" alt="button_advance" />
             </TimeButton>
-          
           </ContainerButtonTime>
           <ImpotEx>
             {/* colocar os "onClickes" nessas imagens */}
-              <ImpExButton>Import</ImpExButton>
-              <ImpExButton>Export</ImpExButton>
+            <ImpExButton>Import</ImpExButton>
+            <ImpExButton>Export</ImpExButton>
           </ImpotEx>
 
           {modalOnOff ? (
@@ -137,11 +159,11 @@ const MapMenu = () => {
               src="./images/pel_button.svg"
               alt="pel_button.svg"
             />
-             <img
-            onClick={() => history.push("/cashFlow")}
-            src="./images/cash_flow.svg"
-            alt="cash flow"
-          />
+            <img
+              onClick={() => history.push("/cashFlow")}
+              src="./images/cash_flow.svg"
+              alt="cash flow"
+            />
             <img
               onClick={() => history.push("/bank")}
               src="./images/bank_button.svg"
@@ -159,7 +181,8 @@ const MapMenu = () => {
             />
           </ContainerMenu>
         </ContainerFooter>
-    </Container>
+      </Container>
+    </ExternContainer>
   );
 };
 export default MapMenu;

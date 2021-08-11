@@ -10,6 +10,7 @@ export const Container = styled.div`
   padding-top: 45px;
   padding-bottom: 5px;
   width: 300px;
+  z-index: 2;
 `;
 
 export const ButtonManagement = styled.div`
