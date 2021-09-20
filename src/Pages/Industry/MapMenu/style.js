@@ -59,18 +59,34 @@ export const ButtonsFloat = styled.button`
     margin-top: -25px;
     margin-left: -25px;
   }
-  p {
-    background-color: #eb6d03;
-    border-radius: 5px;
-    color: #fff;
-    font-weight: bold;
-    margin-top: -75px;
-    margin-left: -30px;
-    position: absolute;
-    padding: 5px;
-    padding-left: 30px;
-    transform: rotate(-55deg);
-  }
+`;
+
+export const P0 = styled.p`
+  background-color: #eb6d03;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  margin-top: -50px;
+  margin-left: -20px;
+  position: absolute;
+  padding: 5px;
+  padding-left: 30px;
+  transform: rotate(-55deg);
+`;
+
+export const P1 = styled(P0)`
+ 
+  
+`;
+
+export const P2 = styled(P0)`
+  margin-top: -75px;
+  margin-left: -20px;
+  padding-left: 25px;
+`;
+
+export const P3 = styled(P0)`
+  padding-left: 35px;
 `;
 
 export const ContainerHeader = styled.header`

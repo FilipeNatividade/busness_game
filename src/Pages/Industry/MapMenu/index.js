@@ -24,6 +24,10 @@ import {
   ButtonsFloatContainer,
   ButtonsFloat,
   ButtonsFloatSection,
+  P0,
+  P1,
+  P2,
+  P3
 } from "./style";
 import { useState } from "react";
 
@@ -32,11 +36,23 @@ const MapMenu = () => {
 
   const [shedShow, setShedShow] = useState(false);
 
+  const [shedShow1, setShedShow1] = useState(false);
+
+  const [shedShow2, setShedShow2] = useState(false);
+
+  const [shedShow3, setShedShow3] = useState(false);
+
   const [modalOnOff, setModalOnOff] = useState(false);
 
   const modal = () => setModalOnOff(!modalOnOff);
 
   const shed = () => setShedShow(!shedShow);
+
+  const shed1 = () => setShedShow1(!shedShow1);
+
+  const shed2 = () => setShedShow2(!shedShow2);
+
+  const shed3 = () => setShedShow3(!shedShow3);
 
   const history = useHistory();
 
@@ -44,17 +60,31 @@ const MapMenu = () => {
     <ExternContainer>
       <ButtonsFloatContainer>
         <ButtonsFloatSection>
-          <ButtonsFloat onClick={() => history.push("/employees")}>
+          <ButtonsFloat onMouseOver={shed} onMouseOut={shed} onClick={() => history.push("/employees")}>
+            {shedShow && (
+              <P0>
+                Funcionários
+                
+              </P0>
+            )}
+
             <img src="/images/management_float.svg" alt="management_float" />
           </ButtonsFloat>
-          <ButtonsFloat onClick={() => history.push("/machinery")}>
+          <ButtonsFloat onMouseOver={shed1} onMouseOut={shed1} onClick={() => history.push("/machinery")}>
+            {shedShow1 && (
+              <P1>
+                Linha de <br/> Produção
+                
+              </P1>
+            )}
+
             <img src="/images/tools_float.svg" alt="tools_float" />
           </ButtonsFloat>
         </ButtonsFloatSection>
         <ButtonsFloatSection>
-          <ButtonsFloat onClick={shed}>
-            {shedShow && (
-              <p>
+          <ButtonsFloat onMouseOver={shed2} onMouseOut={shed2}>
+            {shedShow2 && (
+              <P2>
                 Locação:{" "}
                 <CountUp
                   end={90000}
@@ -63,12 +93,19 @@ const MapMenu = () => {
                   decimals={2}
                   duration={0.5}
                 />
-              </p>
+              </P2>
             )}
 
             <img src="/images/shed_float.svg" alt="shed_float" />
           </ButtonsFloat>
-          <ButtonsFloat onClick={() => history.push("/weeklyReportPcp")}>
+          <ButtonsFloat onMouseOver={shed3} onMouseOut={shed3} onClick={() => history.push("/weeklyReportPcp")}>
+
+            {shedShow3 && (
+              <P3>
+                Relatório <br/> Semanal
+              </P3>
+            )}
+
             <img src="/images/calendar_float.svg" alt="calendar_float" />
           </ButtonsFloat>
         </ButtonsFloatSection>
